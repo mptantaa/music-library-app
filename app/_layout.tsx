@@ -22,6 +22,26 @@ export default function RootLayout() {
           headerShown: false,
         }}
       />
+      <Stack.Screen
+        name="track/[id]"
+        options={{
+          headerShown: false,
+          headerStyle: {
+            backgroundColor: '#25292e',
+          },
+          headerTintColor: '#fff',
+       }}
+       />
+      <Stack.Screen
+        name="artist/[id]"
+        options={{
+          headerShown: false,
+          headerStyle: {
+            backgroundColor: '#25292e',
+          },
+          headerTintColor: '#fff',
+       }}
+       />
     </Stack>
   );
 }

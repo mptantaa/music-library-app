@@ -39,14 +39,14 @@ export const Button: React.FC<ButtonProps> = ({ title, onPress }) => {
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#6200ee',
+    backgroundColor: '#FFD700',
     padding: 12,
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
   },
   text: {
-    color: '#fff',
+    color: '#000',
     fontSize: 16,
     fontWeight: '600',
   },

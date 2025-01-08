@@ -19,9 +19,26 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Музыка',
+          title: 'Главная',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'musical-notes' : 'musical-notes-outline'} color={color} size={24} />
+            <Ionicons
+              name={focused ? 'musical-notes' : 'musical-notes-outline'}
+              color={color}
+              size={24}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="search"
+        options={{
+          title: 'Поиск',
+          tabBarIcon: ({ color, focused }) => (
+            <Ionicons
+              name={focused ? 'search' : 'search-outline'}
+              color={color}
+              size={24}
+            />
           ),
         }}
       />
@@ -30,7 +47,11 @@ export default function TabLayout() {
         options={{
           title: 'Избранное',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'heart' : 'heart-outline'} color={color} size={24} />
+            <Ionicons
+              name={focused ? 'heart' : 'heart-outline'}
+              color={color}
+              size={24}
+            />
           ),
         }}
       />
