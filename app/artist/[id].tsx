@@ -7,20 +7,18 @@ import { Artist, Track } from '@/entities/music/model/types';
 import TrackListItem from '@/entities/music/ui/TrackListItem';
 
 export default function ArtistDetails() {
-  const { id } = useLocalSearchParams(); // Получаем ID артиста из маршрута
+  const { id } = useLocalSearchParams();
   const router = useRouter();
   const [artist, setArtist] = useState<Artist | null>(null);
   const [topTracks, setTopTracks] = useState<Track[]>([]);
   const [loading, setLoading] = useState(true);
   const [favorites, setFavorites] = useState<number[]>([]);
 
-  // Обновление избранных треков из AsyncStorage
   const fetchFavorites = async () => {
     const storedFavorites = await getFavorites();
     setFavorites(storedFavorites);
   };
 
-  // Добавление/удаление трека из избранных
   const toggleFavorite = async (trackId: number) => {
     if (favorites.includes(trackId)) {
       await removeFavorite(trackId);
@@ -30,7 +28,6 @@ export default function ArtistDetails() {
     fetchFavorites();
   };
 
-  // Загрузка данных артиста
   const fetchArtistDetails = async () => {
     try {
       setLoading(true);
@@ -48,7 +45,6 @@ export default function ArtistDetails() {
     }
   };
 
-  // Фокусировка экрана: обновление избранных
   useFocusEffect(
     useCallback(() => {
       fetchFavorites();
@@ -78,13 +74,11 @@ export default function ArtistDetails() {
 
   return (
     <View style={styles.container}>
-      {/* Информация об артисте */}
       <View style={styles.header}>
         <Image source={{ uri: artist.picture_xl }} style={styles.artistImage} />
         <Text style={styles.artistName}>{artist.name}</Text>
       </View>
 
-      {/* Список треков */}
       <View style={styles.tracksContainer}>
         <Text style={styles.sectionTitle}>ТОП 5 треков</Text>
         <FlatList
