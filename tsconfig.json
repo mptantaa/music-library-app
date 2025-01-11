@@ -4,8 +4,18 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@/entities/*": ["entities/*"],
-      "@/shared/*": ["shared/*"],
+      "@/entities/*": [
+        "entities/*"
+      ],
+      "@/shared/*": [
+        "shared/*"
+      ]
     }
-  }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ]
 }
